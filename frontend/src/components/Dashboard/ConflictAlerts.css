@@ -1,0 +1,64 @@
+.conflict-alerts-wrap {
+  background: var(--base);
+  border: 1px solid var(--surface0);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.conflict-alerts-header { display: flex; align-items: center; gap: 8px; }
+.conflict-counts { display: flex; gap: 6px; margin-left: auto; }
+.conflict-badge {
+  padding: 2px 8px; border-radius: 999px;
+  font-size: 0.72rem; font-weight: 600;
+}
+.conflict-badge.high   { background: color-mix(in srgb, var(--red)    15%, transparent); color: var(--red);    }
+.conflict-badge.medium { background: color-mix(in srgb, var(--yellow) 15%, transparent); color: var(--yellow); }
+
+.conflict-list { display: flex; flex-direction: column; gap: 8px; }
+.conflict-item {
+  display: flex; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid; border-radius: var(--radius);
+  align-items: flex-start;
+}
+.conflict-body { flex: 1; min-width: 0; }
+.conflict-title {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; margin-bottom: 3px;
+}
+.conflict-type { font-size: 0.8rem; font-weight: 700; }
+.conflict-msg  { font-size: 0.8rem; color: var(--subtext0); line-height: 1.4; }
+.conflict-tasks { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.conflict-task-chip {
+  background: var(--surface0); border-radius: 4px;
+  padding: 2px 7px; font-size: 0.72rem; color: var(--subtext1);
+  max-width: 180px; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.conflict-task-chip.muted { color: var(--overlay0); }
+.conflict-toggle-btn {
+  background: none;
+  border: 1px dashed var(--surface1);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  color: var(--overlay1);
+  font-family: 'Outfit', sans-serif; font-size: 0.78rem;
+  cursor: pointer; display: flex; align-items: center; gap: 5px;
+  transition: all var(--transition); align-self: flex-start;
+}
+.conflict-toggle-btn:hover { border-color: var(--mauve); color: var(--mauve); }
+
+/* Severity-specific item backgrounds — theme-aware via CSS variables */
+.conflict-item.conflict-high {
+  background: color-mix(in srgb, var(--red)    10%, var(--base));
+  border-color: color-mix(in srgb, var(--red)    25%, transparent);
+}
+.conflict-item.conflict-medium {
+  background: color-mix(in srgb, var(--yellow) 10%, var(--base));
+  border-color: color-mix(in srgb, var(--yellow) 25%, transparent);
+}
+.conflict-item.conflict-low {
+  background: color-mix(in srgb, var(--blue)   8%, var(--base));
+  border-color: color-mix(in srgb, var(--blue)  20%, transparent);
+}

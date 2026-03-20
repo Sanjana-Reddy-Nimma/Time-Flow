@@ -1,0 +1,70 @@
+.progress-page { animation: fadeIn 0.3s ease; }
+
+.progress-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.prog-stat {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center; gap: 8px; padding: 20px;
+}
+.prog-stat-icon {
+  width: 44px; height: 44px; border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+}
+.prog-stat-num  { font-size: 2rem; font-weight: 800; line-height: 1; }
+.prog-stat-label { font-size: 0.78rem; color: var(--overlay1); font-weight: 500; }
+
+.charts-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-bottom: 20px;
+}
+/*.chart-box {} */
+.chart-title { font-size: 0.9rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+.chart-tooltip {
+  background: var(--mantle); border: 1px solid var(--surface0);
+  border-radius: var(--radius-sm); padding: 8px 12px;
+  font-size: 0.8rem; color: var(--text);
+}
+
+/* Donut */
+.donut-wrap { display: flex; justify-content: center; margin-bottom: 12px; }
+.donut-svg  { width: 140px; height: 140px; }
+.donut-legend { display: flex; flex-direction: column; gap: 8px; }
+.dl-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--subtext0); }
+.dl-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+/* Punctuality */
+.punctuality-stats {
+  display: flex; align-items: center;
+  justify-content: space-around; padding: 20px 0;
+}
+.punct-item  { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.punct-num   { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+.punct-label { font-size: 0.78rem; color: var(--overlay1); font-weight: 500; }
+.punct-divider { width: 1px; height: 50px; background: var(--surface0); }
+
+.duration-stats {
+  border-top: 1px solid var(--surface0);
+  padding-top: 12px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.dur-row { display: flex; justify-content: space-between; align-items: center; }
+
+@media (max-width: 1000px) {
+  .charts-row { grid-template-columns: repeat(2, 1fr); }
+  .charts-row .chart-box[style*="span 2"] { grid-column: span 2; }
+}
+@media (max-width: 700px) {
+  .progress-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .charts-row { grid-template-columns: 1fr; }
+  .charts-row .chart-box[style*="span 2"] { grid-column: span 1; }
+}
+
+/* Stat icon color variants — theme-aware */
+.si-mauve  { background: color-mix(in srgb, var(--mauve)  10%, transparent); color: var(--mauve);  }
+.si-green  { background: color-mix(in srgb, var(--green)  10%, transparent); color: var(--green);  }
+.si-yellow { background: color-mix(in srgb, var(--yellow) 10%, transparent); color: var(--yellow); }
+.si-red    { background: color-mix(in srgb, var(--red)    10%, transparent); color: var(--red);    }
