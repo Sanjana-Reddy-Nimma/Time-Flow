@@ -1,4 +1,4 @@
-# TaskFlow: Intelligent Task Management & Algorithmic Prioritization System
+# TaskFlow: Task Scheduling and Time Management System
 
 TaskFlow is a high-performance, full-stack productivity ecosystem designed to solve the "priority paradox" in modern task management. Unlike standard to-do apps, TaskFlow utilizes the proprietary **DEEP-S (Dynamic Evaluation of Essential Priority Scores)** hybrid algorithm to mathematically rank tasks based on real-time urgency, importance, and workload constraints.
 
